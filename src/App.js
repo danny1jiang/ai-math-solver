@@ -2,24 +2,34 @@
 
 import logo from "./logo.svg";
 import "./App.css";
-import {promptWithImage} from "./AI";
+import {checkProblemLabels, promptWithImage} from "./AI";
 import {useState} from "react";
+import {SelectProblemComponent} from "./pages/SelectProblem";
+import Modal from "react-modal";
+
+Modal.setAppElement("#appElement");
 
 function App() {
 	const [file, setFile] = useState();
+	const [problems, setProblems] = useState([]);
 
 	function handleChange(event) {
 		setFile(event.target.files[0]);
 	}
 
 	return (
-		<div className="App">
+		<div id="appElement" className="App">
 			<header className="App-header">
+				<Modal isOpen={false}>
+					<SelectProblemComponent problems={problems} />
+				</Modal>
 				<img src={logo} className="App-logo" alt="logo" />
 				<input type="file" onChange={handleChange} />
 				<button
 					onClick={() => {
-						promptWithImage(file);
+						checkProblemLabels(file).then((problems) => {
+							setProblems(problems);
+						});
 					}}
 				>
 					Generate Content
