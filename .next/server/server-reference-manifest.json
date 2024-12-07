@@ -1,9 +1,9 @@
 {
   "node": {
-    "40912698efc9a743c003854a3bec7ec4ddd8c8a688": {
+    "00daf55610fa487642e85168ab95464b9d672ab2e7": {
       "workers": {
         "app/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fdanny%2FDocuments%2Fweb-design%2Fmath-solver-ai%2Fsrc%2FAI.js%22%2C%5B%5B%2240912698efc9a743c003854a3bec7ec4ddd8c8a688%22%2C%22checkProblemLabels%22%5D%2C%5B%2260eb245ed88c06fc656ac4791cf077cb10e57ea1ba%22%2C%22promptWithImage%22%5D%5D%5D%5D&__client_imported__=true!",
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fdanny%2FDocuments%2Fweb-design%2Fmath-solver-ai%2Fsrc%2FserverAI.js%22%2C%5B%5B%2200daf55610fa487642e85168ab95464b9d672ab2e7%22%2C%22getAPIKey%22%5D%2C%5B%2240ffff0a2010dd7fa8735f201e9506f7b9222db425%22%2C%22checkProblemLabels%22%5D%2C%5B%22603f11fac2d488f7125fbc23e2392305d861a4ae2d%22%2C%22fileToGenerativePart%22%5D%5D%5D%2C%5B%22%2FUsers%2Fdanny%2FDocuments%2Fweb-design%2Fmath-solver-ai%2Fsrc%2Fcomponents%2FChatResponse.js%22%2C%5B%5B%22402adcb4b2b5129299d34ecaa43ccefa861d069ac1%22%2C%22ChatResponseComponent%22%5D%5D%5D%5D&__client_imported__=true!",
           "async": false
         }
       },
@@ -11,10 +11,32 @@
         "app/page": "action-browser"
       }
     },
-    "60eb245ed88c06fc656ac4791cf077cb10e57ea1ba": {
+    "40ffff0a2010dd7fa8735f201e9506f7b9222db425": {
       "workers": {
         "app/page": {
-          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fdanny%2FDocuments%2Fweb-design%2Fmath-solver-ai%2Fsrc%2FAI.js%22%2C%5B%5B%2240912698efc9a743c003854a3bec7ec4ddd8c8a688%22%2C%22checkProblemLabels%22%5D%2C%5B%2260eb245ed88c06fc656ac4791cf077cb10e57ea1ba%22%2C%22promptWithImage%22%5D%5D%5D%5D&__client_imported__=true!",
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fdanny%2FDocuments%2Fweb-design%2Fmath-solver-ai%2Fsrc%2FserverAI.js%22%2C%5B%5B%2200daf55610fa487642e85168ab95464b9d672ab2e7%22%2C%22getAPIKey%22%5D%2C%5B%2240ffff0a2010dd7fa8735f201e9506f7b9222db425%22%2C%22checkProblemLabels%22%5D%2C%5B%22603f11fac2d488f7125fbc23e2392305d861a4ae2d%22%2C%22fileToGenerativePart%22%5D%5D%5D%2C%5B%22%2FUsers%2Fdanny%2FDocuments%2Fweb-design%2Fmath-solver-ai%2Fsrc%2Fcomponents%2FChatResponse.js%22%2C%5B%5B%22402adcb4b2b5129299d34ecaa43ccefa861d069ac1%22%2C%22ChatResponseComponent%22%5D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/page": "action-browser"
+      }
+    },
+    "603f11fac2d488f7125fbc23e2392305d861a4ae2d": {
+      "workers": {
+        "app/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fdanny%2FDocuments%2Fweb-design%2Fmath-solver-ai%2Fsrc%2FserverAI.js%22%2C%5B%5B%2200daf55610fa487642e85168ab95464b9d672ab2e7%22%2C%22getAPIKey%22%5D%2C%5B%2240ffff0a2010dd7fa8735f201e9506f7b9222db425%22%2C%22checkProblemLabels%22%5D%2C%5B%22603f11fac2d488f7125fbc23e2392305d861a4ae2d%22%2C%22fileToGenerativePart%22%5D%5D%5D%2C%5B%22%2FUsers%2Fdanny%2FDocuments%2Fweb-design%2Fmath-solver-ai%2Fsrc%2Fcomponents%2FChatResponse.js%22%2C%5B%5B%22402adcb4b2b5129299d34ecaa43ccefa861d069ac1%22%2C%22ChatResponseComponent%22%5D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/page": "action-browser"
+      }
+    },
+    "402adcb4b2b5129299d34ecaa43ccefa861d069ac1": {
+      "workers": {
+        "app/page": {
+          "moduleId": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fdanny%2FDocuments%2Fweb-design%2Fmath-solver-ai%2Fsrc%2FserverAI.js%22%2C%5B%5B%2200daf55610fa487642e85168ab95464b9d672ab2e7%22%2C%22getAPIKey%22%5D%2C%5B%2240ffff0a2010dd7fa8735f201e9506f7b9222db425%22%2C%22checkProblemLabels%22%5D%2C%5B%22603f11fac2d488f7125fbc23e2392305d861a4ae2d%22%2C%22fileToGenerativePart%22%5D%5D%5D%2C%5B%22%2FUsers%2Fdanny%2FDocuments%2Fweb-design%2Fmath-solver-ai%2Fsrc%2Fcomponents%2FChatResponse.js%22%2C%5B%5B%22402adcb4b2b5129299d34ecaa43ccefa861d069ac1%22%2C%22ChatResponseComponent%22%5D%5D%5D%5D&__client_imported__=true!",
           "async": false
         }
       },

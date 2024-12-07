@@ -1,9 +1,6 @@
-export function ChatResponseComponent(contentStream) {
-	const [text, setText] = useState("");
+"use server";
 
-	return (
-		<div>
-			<p>{text}</p>
-		</div>
-	);
+export async function ChatResponseComponent({problemLabel}) {
+	const [text, setText] = useState("");
+	return <div></div>;
 }
