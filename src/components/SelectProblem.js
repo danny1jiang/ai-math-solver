@@ -28,7 +28,6 @@ export function SelectProblemComponent({
 
 	return (
 		<div style={{backgroundColor: "#777777", maxWidth: "100%", height: "100%"}}>
-			<button onClick={onCloseCallback}>Back</button>
 			<div style={styles.container}>{problemComponents}</div>
 		</div>
 	);
