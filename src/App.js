@@ -14,13 +14,6 @@ import Dropzone from "react-dropzone";
 import {CustomButtonComponent} from "./components/CustomButton";
 import {BackButton} from "./components/BackButton";
 
-window.MathJax = {
-	tex: {
-		inlineMath: [["$", "$"]],
-		displayMath: [["$$", "$$"]],
-	},
-};
-
 function App() {
 	const [file, setFile] = useState();
 	const [problems, setProblems] = useState([]);
@@ -29,6 +22,12 @@ function App() {
 	const [response, setResponse] = useState("");
 
 	useEffect(() => {
+		window.MathJax = {
+			tex: {
+				inlineMath: [["$", "$"]],
+				displayMath: [["$$", "$$"]],
+			},
+		};
 		ReactModal.setAppElement("#appElement");
 	}, []);
 
