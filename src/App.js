@@ -22,12 +22,6 @@ function App() {
 	const [response, setResponse] = useState("");
 
 	useEffect(() => {
-		window.MathJax = {
-			tex: {
-				inlineMath: [["$", "$"]],
-				displayMath: [["$$", "$$"]],
-			},
-		};
 		ReactModal.setAppElement("#appElement");
 	}, []);
 

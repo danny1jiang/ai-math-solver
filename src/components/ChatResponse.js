@@ -2,9 +2,17 @@
 
 import {MathJax, MathJaxContext} from "better-react-mathjax";
 import parse from "html-react-parser";
+
+const mathJaxConfig = {
+	tex: {
+		inlineMath: [["$", "$"]],
+		displayMath: [["$$", "$$"]],
+	},
+};
+
 export function ChatResponseComponent({response}) {
 	return (
-		<MathJaxContext>
+		<MathJaxContext config={mathJaxConfig}>
 			<div style={styles.container}>
 				<MathJax renderMode="post">{parse(response)}</MathJax>
 			</div>

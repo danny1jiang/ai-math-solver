@@ -4,8 +4,6 @@ import {GoogleGenerativeAI} from "@google/generative-ai";
 import {fileToGenerativePart, getAPIKey} from "./serverAI";
 
 export async function promptWithImage(file, problemLabel) {
-	console.log("test");
-	console.log(file);
 	let result = "";
 	if (file !== undefined) {
 		const filePart = await fileToGenerativePart(file, "image/png");
