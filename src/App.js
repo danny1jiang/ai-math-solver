@@ -12,6 +12,7 @@ import {marked} from "marked";
 import parse from "html-react-parser";
 import Dropzone from "react-dropzone";
 import {CustomButtonComponent} from "./components/CustomButton";
+import {BackButton} from "./components/BackButton";
 
 window.MathJax = {
 	tex: {
@@ -43,12 +44,15 @@ function App() {
 		let currResponse = "";
 		for await (const chunk of chunkList) {
 			let chunkText = chunk.text();
-			/*if ("{explanation_start}" in chunkText) {
-				chunkText = chunkText.split("{explanation_start}")[0];
-			}*/
+			console.log(chunkText);
 			currResponse += chunkText; // Concatentate new text chunks
-			setResponse(marked.parse(currResponse));
+			if (!(chunkText.includes("left") && !chunkText.includes("\right"))) {
+				setResponse(marked.parse(currResponse));
+			} else {
+				console.log("skipping render");
+			}
 		}
+		return;
 	}
 
 	function onSolveStart() {
@@ -96,17 +100,20 @@ function App() {
 							transform: "translate(-50%, -50%)",
 							padding: 0,
 							border: "none",
-							backgroundColor: "rgb(0,0,0,0)",
+							backgroundColor: "#282c34",
+							borderRadius: "10px",
+							scrollbarColor: "#a3a3a3 rgb(0,0,0,0)",
 						},
 					}}
 				>
-					<button
-						onClick={() => {
-							setShowModal(false);
-						}}
-					>
-						Back
-					</button>
+					{response === "Generating Response..." ? null : (
+						<BackButton
+							onClick={() => {
+								setShowModal(false);
+								setModalContent("");
+							}}
+						/>
+					)}
 					{modalComponent}
 				</ReactModal>
 				<div

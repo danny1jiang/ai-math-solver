@@ -2,12 +2,10 @@
 
 import {MathJax, MathJaxContext} from "better-react-mathjax";
 import parse from "html-react-parser";
-
 export function ChatResponseComponent({response}) {
 	return (
 		<MathJaxContext>
-			<div style={{display: "flex", flex: 1, backgroundColor: "#777777", maxWidth: "100%"}}>
-				<div style={styles.container}></div>
+			<div style={styles.container}>
 				<MathJax renderMode="post">{parse(response)}</MathJax>
 			</div>
 		</MathJaxContext>
@@ -17,11 +15,13 @@ export function ChatResponseComponent({response}) {
 const styles = {
 	container: {
 		display: "flex",
-		flexWrap: "wrap",
-		flexDirection: "row",
-		backgroundColor: "white",
-		alignItems: "space-evenly",
-		justifyContent: "flex-start",
-		overflow: "hidden",
+		flex: 1,
+		maxWidth: "100%",
+		minHeight: "100%",
+		color: "white",
+		fontFamily: "sans-serif",
+		fontSize: 25,
+		padding: "5%",
+		scrollbarColor: "black white",
 	},
 };

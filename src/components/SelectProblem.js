@@ -1,4 +1,5 @@
 import {promptWithImage} from "../AI";
+import {CustomButtonComponent} from "./CustomButton";
 
 export function SelectProblemComponent({
 	file,
@@ -27,7 +28,30 @@ export function SelectProblemComponent({
 	}
 
 	return (
-		<div style={{backgroundColor: "#777777", maxWidth: "100%", height: "100%"}}>
+		<div
+			style={{
+				display: "flex",
+				flexDirection: "column",
+				alignItems: "center",
+				color: "white",
+				fontFamily: "sans-serif",
+				fontSize: 25,
+				maxWidth: "100%",
+				height: "100%",
+				padding: "5%",
+			}}
+		>
+			<h1 style={{margin: 0}}>Select a Problem</h1>
+			<div
+				style={{
+					width: "90%",
+					marginTop: "3%",
+					marginBottom: "4%",
+					height: "1.5px",
+					borderRadius: "10px",
+					backgroundColor: "white",
+				}}
+			/>
 			<div style={styles.container}>{problemComponents}</div>
 		</div>
 	);
@@ -35,7 +59,7 @@ export function SelectProblemComponent({
 
 function ProblemComponent({file, problemLabel, resultCallback, onStartCallback}) {
 	return (
-		<button
+		<CustomButtonComponent
 			onClick={() => {
 				onStartCallback();
 				resultCallback(problemLabel);
@@ -44,28 +68,30 @@ function ProblemComponent({file, problemLabel, resultCallback, onStartCallback})
 				});*/
 			}}
 			style={styles.problemLabelBox}
+			hoverStyle={{...styles.problemLabelBox, backgroundColor: "#4e4e4e"}}
 		>
-			<h1>{problemLabel}</h1>
-		</button>
+			<h1 style={{color: "white", margin: 0, fontSize: 40}}>{problemLabel}</h1>
+		</CustomButtonComponent>
 	);
 }
 
 const styles = {
 	container: {
-		display: "flex",
-		flexWrap: "wrap",
-		flexDirection: "row",
-		gap: "5%",
-		//paddingLeft: "5%",
-		backgroundColor: "white",
-		alignItems: "space-evenly",
-		justifyContent: "flex-start",
+		width: "100%",
+		display: "grid",
+		justifyItems: "center",
+		gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr",
 		overflow: "hidden",
 	},
 	problemLabelBox: {
-		width: "14%",
+		width: "70%",
 		aspectRatio: 1,
-		backgroundColor: "#939393",
-		border: "none",
+		marginBottom: "25%",
+		//backgroundColor: "#939393",
+		backgroundColor: "rgba(0,0,0,0)",
+		borderColor: "white",
+		borderStyle: "solid",
+		borderWidth: "1.5px",
+		borderRadius: "10px",
 	},
 };
