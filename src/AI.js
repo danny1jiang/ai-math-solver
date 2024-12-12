@@ -27,7 +27,6 @@ export async function promptWithImage(file, problemLabel) {
 
 		const imageParts = [filePart];
 		let generatedContent = await model.generateContent([prompt, ...imageParts]);
-		console.log(generatedContent.response.text());
 
 		const newModel = genAI.getGenerativeModel({
 			model: "gemini-1.5-flash",

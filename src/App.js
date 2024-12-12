@@ -1,15 +1,10 @@
-import logo from "./logo.svg";
 import "./App.css";
 import {promptWithImage} from "./AI";
 import {useEffect, useState} from "react";
 import {SelectProblemComponent} from "./components/SelectProblem";
 import ReactModal from "react-modal";
-import {MathJax, MathJaxContext} from "better-react-mathjax";
 import {ChatResponseComponent} from "./components/ChatResponse";
 import {checkProblemLabels} from "./serverAI";
-import {FileUploader} from "react-drag-drop-files";
-import {marked} from "marked";
-import parse from "html-react-parser";
 import Dropzone from "react-dropzone";
 import {CustomButtonComponent} from "./components/CustomButton";
 import {BackButton} from "./components/BackButton";
@@ -37,12 +32,9 @@ function App() {
 		let currResponse = "";
 		for await (const chunk of chunkList) {
 			let chunkText = chunk.text();
-			console.log(chunkText);
 			currResponse += chunkText; // Concatentate new text chunks
-			if (!(chunkText.includes("left") && !chunkText.includes("\right"))) {
-				setResponse(marked.parse(currResponse));
-			} else {
-				console.log("skipping render");
+			if (!(chunkText.includes("\\left") && !chunkText.includes("\\right"))) {
+				setResponse(currResponse);
 			}
 		}
 		return;

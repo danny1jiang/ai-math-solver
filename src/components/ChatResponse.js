@@ -2,6 +2,7 @@
 
 import {MathJax, MathJaxContext} from "better-react-mathjax";
 import parse from "html-react-parser";
+import {marked} from "marked";
 
 const mathJaxConfig = {
 	tex: {
@@ -14,7 +15,9 @@ export function ChatResponseComponent({response}) {
 	return (
 		<MathJaxContext config={mathJaxConfig}>
 			<div style={styles.container}>
-				<MathJax renderMode="post">{parse(response)}</MathJax>
+				<MathJax dynamic={true} renderMode="post">
+					{parse(marked.parse(response))}
+				</MathJax>
 			</div>
 		</MathJaxContext>
 	);
