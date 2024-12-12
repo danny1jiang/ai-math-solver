@@ -13,13 +13,13 @@ const mathJaxConfig = {
 
 export function ChatResponseComponent({response}) {
 	return (
-		<MathJaxContext config={mathJaxConfig}>
-			<div style={styles.container}>
+		<div style={styles.container}>
+			<MathJaxContext config={mathJaxConfig}>
 				<MathJax dynamic={true} renderMode="post">
 					{parse(marked.parse(response))}
 				</MathJax>
-			</div>
-		</MathJaxContext>
+			</MathJaxContext>
+		</div>
 	);
 }
 
@@ -27,7 +27,6 @@ const styles = {
 	container: {
 		display: "flex",
 		flex: 1,
-		maxWidth: "100%",
 		minHeight: "100%",
 		color: "white",
 		fontFamily: "sans-serif",

@@ -14,6 +14,7 @@ function App() {
 	const [problems, setProblems] = useState([]);
 	const [showModal, setShowModal] = useState(false);
 	const [modalContent, setModalContent] = useState("");
+	const [findingProblems, setFindingProblems] = useState(false);
 	const [response, setResponse] = useState("");
 
 	useEffect(() => {
@@ -148,16 +149,20 @@ function App() {
 						hoverStyle={{...styles.solveButton, backgroundColor: "#535353"}}
 						onClick={() => {
 							if (file !== undefined) {
-								checkProblemLabels(file).then((problems) => {
-									setProblems(problems);
-									setModalContent("SelectProblemComponent");
-									setShowModal(true);
-								});
+								if (findingProblems === false) {
+									setFindingProblems(true);
+									checkProblemLabels(file).then((problems) => {
+										setFindingProblems(false);
+										setProblems(problems);
+										setModalContent("SelectProblemComponent");
+										setShowModal(true);
+									});
+								}
 							}
 						}}
 					>
-						{response === "Generating Response..." ? (
-							<p style={{color: "white", fontSize: 25}}>{response}</p>
+						{findingProblems ? (
+							<p style={{color: "white", fontSize: 25}}>Solving...</p>
 						) : (
 							<p style={{color: "white", fontSize: 25}}>Solve</p>
 						)}
