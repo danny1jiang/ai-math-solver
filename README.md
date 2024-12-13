@@ -3,7 +3,7 @@
 <br />
 <div align="center">
   <a href="https://aimathsolver.netlify.app/">
-    <img src="src/calculatorAndGear.png" alt="Logo" width="130" height="130">
+    <img src="https://cloud-fo9r0j4fr-hack-club-bot.vercel.app/0calculatorandgear.png" alt="Logo" width="130" height="130">
   </a>
 
   <h3 align="center">AI Math Solver</h3>
