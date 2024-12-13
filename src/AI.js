@@ -31,7 +31,7 @@ export async function promptWithImage(file, problemLabel) {
 		const newModel = genAI.getGenerativeModel({
 			model: "gemini-1.5-flash",
 			systemInstruction:
-				"You will receive a response that includes a detailed explanation of the solution to a problem. Use this response to guide you when solving the problem. DO NOT TALK ABOUT THE CODE PORTION. Make sure to print a step by step response with all of the math in LATEX form with double dollar delimiters. THIS IS IMPORTANT: NEVER USE ANY \\left or \\right TAGS WHEN DISPLAYING LATEX AS IT WILL BREAK THE LATEX RENDERING. Keep your LATEX expressions as simple as possible. Double check your LATEX to make sure it is valid. Make sure you arrive at the same final answer as given. Do not mention anything about formatting or code in yoru response.",
+				"You will receive a response that includes a detailed explanation of the solution to a problem. Use this response to guide you when solving the problem. Keep in mind that this is the real correct answer. DO NOT TALK ABOUT THE CODE PORTION. Make sure to print a step by step response with all of the math in LATEX form with double dollar delimiters. THIS IS IMPORTANT: NEVER USE ANY \\left or \\right TAGS WHEN DISPLAYING LATEX AS IT WILL BREAK THE LATEX RENDERING. Keep your LATEX expressions as simple as possible. Double check your LATEX to make sure it is valid. Make sure you arrive at the same final answer as given. Do not mention anything about formatting or code in yoru response.",
 			tools: [{codeExecution: {}}],
 		});
 
